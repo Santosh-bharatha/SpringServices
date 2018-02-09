@@ -1,0 +1,30 @@
+package com.spring.rest.user;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ws.config.annotation.EnableWs;
+
+@RestController
+@EnableWs
+public class UserController {
+	@Autowired
+	private UserDAOService service;
+	
+	@RequestMapping(path="/users", method=RequestMethod.GET)
+	public List<User> retrieveAllUsers(){
+		return service.findAll();
+	}
+	
+	@GetMapping("/users/{id}")
+	public User retrieveUser(@PathVariable int id){
+		return service.findOne(id);
+		
+	}
+
+}
