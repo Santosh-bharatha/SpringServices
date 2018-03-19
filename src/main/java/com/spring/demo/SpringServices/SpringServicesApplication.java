@@ -2,14 +2,11 @@ package com.spring.demo.SpringServices;
 
 import java.util.Locale;
 
-import org.apache.tomcat.util.descriptor.LocalResolver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -17,13 +14,13 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @EnableAutoConfiguration
-@SpringBootApplication
 @EnableCaching
-@ComponentScan(basePackages = {"com.spring.demo.examples", "com.spring.rest.user","com.spring.rest.swagger"})
+@ComponentScan(basePackages = {"com.spring.demo.examples", "com.spring.rest.user","com.spring.rest.swagger", "com.spring.rest.filtering", "com.spring.rest.versioning"})
+@SpringBootApplication
 public class SpringServicesApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = 
+		/*ApplicationContext applicationContext =*/ 
 		SpringApplication.run(SpringServicesApplication.class, args);
 
 		/*for(String name : applicationContext.getBeanDefinitionNames()){

@@ -2,7 +2,10 @@ package com.spring.rest.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class User {
 	
@@ -11,6 +14,8 @@ public class User {
 	
 	@Size(min=2, message="Name should have atleast 2 characters")
 	private String name;
+	@Past
+	@ApiModelProperty(notes="Birth date should be in the past")
 	private Date birthDate;
 	
 	protected User(){
