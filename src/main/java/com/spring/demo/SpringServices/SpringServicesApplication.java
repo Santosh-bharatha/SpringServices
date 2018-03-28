@@ -15,17 +15,17 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @EnableAutoConfiguration
 @EnableCaching
-@ComponentScan(basePackages = {"com.spring.demo.examples", "com.spring.rest.user","com.spring.rest.swagger", "com.spring.rest.filtering", "com.spring.rest.versioning"})
+@ComponentScan(basePackages = {"com.spring.demo.examples.book", "com.spring.rest.user","com.spring.rest.swagger", "com.spring.rest.filtering", "com.spring.rest.versioning"})
 @SpringBootApplication
 public class SpringServicesApplication {
 
 	public static void main(String[] args) {
-		/*ApplicationContext applicationContext =*/ 
+		ApplicationContext applicationContext = 
 		SpringApplication.run(SpringServicesApplication.class, args);
 
-		/*for(String name : applicationContext.getBeanDefinitionNames()){
+		for(String name : applicationContext.getBeanDefinitionNames()){
 			System.out.println(name);
-		}*/
+		}
 	}
 	
 	@Bean
